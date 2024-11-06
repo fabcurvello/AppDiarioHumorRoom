@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroActivity">
+
+    <TextView
+        android:id="@+id/registro_activity_tv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Como está o seu humor hoje?"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/registro_activity_rg_humor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_activity_tv_titulo">
+
+        <RadioButton
+            android:id="@+id/registro_activity_rb_muito_triste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Muito Triste" />
+
+        <RadioButton
+            android:id="@+id/registro_activity_rb_triste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Triste" />
+
+        <RadioButton
+            android:id="@+id/registro_activity_rb_neutro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Neutro" />
+
+        <RadioButton
+            android:id="@+id/registro_activity_rb_feliz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feliz" />
+
+        <RadioButton
+            android:id="@+id/registro_activity_rb_muito_feliz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Muito Feliz" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/registro_activity_et_motivo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Motivo (opcional)"
+        android:inputType="text"
+        android:maxLength="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_activity_rg_humor" />
+
+    <Button
+        android:id="@+id/registro_activity_bt_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_activity_et_motivo" />
+
+    <TextView
+        android:id="@+id/registro_activity_tv_cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro_activity_bt_salvar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
