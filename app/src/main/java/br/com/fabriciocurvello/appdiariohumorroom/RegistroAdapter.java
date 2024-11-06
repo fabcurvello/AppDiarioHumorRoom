@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class RegistroAdapter extends ListAdapter<RegistroDeHumor, RegistroAdapter.RegistroViewHolder> {
 
     protected RegistroAdapter(){
@@ -34,6 +37,9 @@ public class RegistroAdapter extends ListAdapter<RegistroDeHumor, RegistroAdapte
         private TextView tvData;
         private TextView tvMotivo;
 
+        // Define o formato de exibição para a Data
+        private SimpleDateFormat dateFormat = new SimpleDateFormat("EEE dd/MM/yy HH:mm", Locale.getDefault());
+
         public RegistroViewHolder(@NonNull View itemView) {
             super(itemView);
             imvSmile = itemView.findViewById(R.id.adapter_registro_imv_smile);
@@ -43,7 +49,11 @@ public class RegistroAdapter extends ListAdapter<RegistroDeHumor, RegistroAdapte
 
         public void bind(RegistroDeHumor registro) {
             imvSmile.setImageResource(obterImagemSmile(registro.getHumor()));
-            tvData.setText(registro.getData().toString());
+
+            // Formata a data usando SimpleDateFormat
+            String dataFormatada = dateFormat.format(registro.getData());
+            tvData.setText(dataFormatada);
+
             tvMotivo.setText(registro.getMotivo() != null ? registro.getMotivo() : "Sem motivo");
         }
 
