@@ -1,6 +1,8 @@
 package br.com.fabriciocurvello.appdiariohumorroom;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public class HistoricoActivity extends AppCompatActivity  {
     private RegistroAdapter adapter;
 
     private RecyclerView rvHistorico;
+    private Button btVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +39,18 @@ public class HistoricoActivity extends AppCompatActivity  {
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "diario_humor_db").build();
         adapter = new RegistroAdapter();
 
+        btVoltar = findViewById(R.id.historico_activity_bt_voltar);
+
         rvHistorico = findViewById(R.id.historico_activity_rv_historico);
         rvHistorico.setLayoutManager(new LinearLayoutManager(this));
         rvHistorico.setAdapter(adapter);
+
+        btVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Encerra a Activity
+            }
+        });
 
         carregarHistorico();
 
