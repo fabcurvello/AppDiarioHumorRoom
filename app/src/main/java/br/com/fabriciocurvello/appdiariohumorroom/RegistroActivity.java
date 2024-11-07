@@ -39,7 +39,7 @@ public class RegistroActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Inicializa o banco de dadoas
+        // Inicializa o banco de dados
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "diario_humor_db").build();
 
         rgHumor = findViewById(R.id.registro_activity_rg_humor);
