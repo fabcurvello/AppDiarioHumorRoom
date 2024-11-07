@@ -28,8 +28,6 @@ public class RegistroActivity extends AppCompatActivity {
     private Button btSalvar;
     private TextView tvCancelar;
 
-    private final String MUITO_FELIZ = "R.id.registro_activity_rb_muito_feliz";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

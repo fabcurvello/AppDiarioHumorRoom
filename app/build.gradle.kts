@@ -46,3 +46,4 @@ dependencies {
     annotationProcessor(libs.room.compiler) // Para processar as anotações
     implementation(libs.room.ktx) // Extensões KTX do Room (opcional)
 }
+
