@@ -77,7 +77,6 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 database.registroDeHumorDao().inserirRegistro(registro);
-                Toast.makeText(RegistroActivity.this, "Registro de humor salvo com sucesso", Toast.LENGTH_SHORT).show();
                 finish(); // fecha a tela após salvar
             }
         });
